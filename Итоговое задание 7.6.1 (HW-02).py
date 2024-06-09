@@ -67,9 +67,9 @@ def get_result():
 
     for i in victories:
         if game_map[i[0]] == "X" and game_map[i[1]] == "X" and game_map[i[2]] == "X":
-            win = "X"
+            win = "Игрок №1"
         if game_map[i[0]] == "0" and game_map[i[1]] == "0" and game_map[i[2]] == "0":
-            win = "0"
+            win = "Игрок №2"
     return win
 
 
