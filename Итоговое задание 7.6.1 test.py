@@ -40,7 +40,7 @@ def step_game_map(step, symbol):
     game_map[index] = symbol
 
 
-def step_index(x, y):
+def step_index(x, y):   ## Тестовая версия проверки на занятость клетки(ошибочная), не могу понять,как ее реализовать.
     while True:
         try:
             if x == 0 and y == 0:
