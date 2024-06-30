@@ -7,7 +7,7 @@ class BoardException(Exception):
 
 class BoardOutException(BoardException):
     def __str__(self):
-        return "Земля плоская! Вы вышли за пределы, попробуйте снова!"
+        return "Море меньше,чем вы думаете.. Вы стреляете по суше, попробуйте снова!"
 
 
 class BoardUsedException(BoardException):
@@ -225,7 +225,8 @@ class Game:
             board = self.try_board()
         return board
 
-    def greet(self):
+    @staticmethod
+    def greet():
         print("------------------------")
         print("    Приветствуем вас    ")
         print("         в игре         ")
@@ -237,10 +238,10 @@ class Game:
 
     def print_boards(self):
         print("-" * 28)
-        print("Доска игрока:")
+        print("Карта игрока:")
         print(self.us.board)
         print("-" * 28)
-        print("Доска компьютера:")
+        print("Карта компьютера:")
         print(self.ai.board)
         print("-" * 28)
 
@@ -248,13 +249,6 @@ class Game:
         num = 0
         while True:
             self.print_boards()
-            print("-" * 28)
-            print("Карта игрока:")
-            print(self.us.board)
-            print("-" * 28)
-            print("Карта компьютера:")
-            print(self.ai.board)
-            print("-" * 28)
             if num % 2 == 0:
                 print("Ходит игрок!")
                 repeat = self.us.move()
